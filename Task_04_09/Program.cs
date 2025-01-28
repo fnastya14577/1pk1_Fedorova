@@ -13,8 +13,7 @@
             int[] uniqMas = new int[20];    // массив уникальных случайных чисел
 
             Console.WriteLine("Уникальные элементы массива:");
-
-            bool elemIsZero = true;     // елем. является ли 0
+            bool elemIsZero = true;     
             for (int i = 0; i < mas.Length; i++)
             {
                 mas[i] = rnd.Next(0, 10);
@@ -26,9 +25,7 @@
                 {
                     elemIsZero = false;
                     Console.Write("0 ");
-                }
-
-                // если элем. нет в массиве uniqMas добавить его туда и вывести на консоль
+                }              
                 if (Array.IndexOf(uniqMas, mas[i]) == -1)
                 {
                     uniqMas[i] = mas[i];

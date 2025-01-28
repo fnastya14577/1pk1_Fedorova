@@ -13,8 +13,7 @@
                 numbers[index] = random.Next(0, 49);
                 Console.Write(numbers[index] + " ");
             }
-
-            //поиск пар 
+            //нахождение пар чисел 
             int countOfPairs = 0;
             for (int i = 1; i < numbers.Length; i++)
             {

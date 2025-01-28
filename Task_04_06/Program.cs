@@ -10,11 +10,11 @@
         static void Main(string[] args)
         {
             Random rnd = new Random();
-            int[] numbers = new int[20];        // результирующий массив
-            int[] outnumbers = new int[20];     // массив использованных чисел
+            int[] numbers = new int[20];        
+            int[] outnumbers = new int[20]; 
 
-            int rndnum = 0; // рандомное число
-            int i = 0;      // параметр цикла
+            int rndnum = 0; 
+            int i = 0;      
             while (i < numbers.Length)
             {
                 rndnum = rnd.Next(-20, 21);
@@ -28,8 +28,7 @@
                 numbers[i] = rndnum;
                 i++;
             }
-
-            // нахождение максимального числа по модулю
+            // нахождение макс числа 
             int maxnum = 0;
             foreach (int j in numbers)
                 if (Math.Abs(maxnum) < Math.Abs(j))

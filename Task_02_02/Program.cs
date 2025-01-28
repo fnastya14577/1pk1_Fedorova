@@ -2,6 +2,7 @@
     {
     internal class Program
     {
+        //Найти значение выражения при a = 8, b = 14, с = π/4
         static void Main(string[] args)
         {
                 int a = 8;

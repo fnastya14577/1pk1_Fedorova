@@ -11,7 +11,7 @@
             Random rnd = new Random();
             int[] height = new int[30];
 
-            // количества мальчиков, девочек и их суммарный рост
+            // количество детей 
             int countBoy = 0;
             double summHeightBoy = 0;
             int countGirl = 0;
@@ -19,7 +19,7 @@
 
             for (int i = 0; i < height.Length; i++)
             {
-                height[i] = rnd.Next(155, 186) * (rnd.Next(2) * 2 - 1); // рандомно от 155 до 186 и от -155 до -186
+                height[i] = rnd.Next(155, 186) * (rnd.Next(2) * 2 - 1); 
 
                 // подсчёт детей и их суммарного роста
                 if (height[i] < 0)

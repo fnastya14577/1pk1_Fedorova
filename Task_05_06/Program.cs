@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+   
         static void Main(string[] args)
         {
             /*Осуществить генерация двумерного [10*5] массива по следующему правилу:

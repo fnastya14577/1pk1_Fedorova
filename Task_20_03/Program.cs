@@ -15,7 +15,13 @@
         */
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Order order = new Order();
+            Console.WriteLine(order.Status);
+
+            order.ChangeStatus();
+            order.ChangeStatus();
+            order.CancelOrder();
+            order.ChangeStatus();
         }
     }
 }

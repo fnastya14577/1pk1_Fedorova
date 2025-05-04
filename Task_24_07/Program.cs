@@ -1,30 +1,45 @@
 ﻿namespace Task_24_07
 {
+    /*Реализуйте функцию, которая ищет заданное слово в текстовом файле и возвращает все строки,
+      содержащие это слово (регистронезависимо). */
     internal class Program
     {
-        /* Реализуйте функцию, которая ищет заданное слово в текстовом файле 
-           и возвращает все строки, содержащиеэтослово (регистронезависимо). */
         static void Main(string[] args)
         {
-            string path = "text.txt";
-            string word = "опыт";
-
-            List<string> linesWithWord = FindWord(path, word);
-
-            foreach (string line in linesWithWord)
+            static void Main(string[] args)
             {
-                Console.WriteLine(line);
-            }
-        }
-        static List<string> FindWord(string path, string word)
-        {
-            List<string> result = new List<string>();
+                string filePath = "example.txt"; // Замените на путь к вашему файлу
+                string searchWord = "ваше_слово"; // Замените на слово для поиска
 
-            foreach (string line in File.ReadLines(path))
-            {
-                result.Add(line);
+                List<string> result = FindLinesContainingWord(filePath, searchWord);
+
+                foreach (var line in result)
+                {
+                    Console.WriteLine(line);
+                }
             }
-            return result;
+
+            static List<string> FindLinesContainingWord(string filePath, string word)
+            {
+                List<string> linesWithWord = new List<string>();
+                try
+                {
+                    // Чтение всех строк 
+                    string[] allLines = File.ReadAllLines(filePath);
+                    foreach (string line in allLines)
+                    {
+                        if (line.IndexOf(word, StringComparison.OrdinalIgnoreCase) >= 0)
+                        {
+                            linesWithWord.Add(line);
+                        }
+                    }
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine($"Ошибка чтения файла: {e.Message}");
+                }
+                return linesWithWord;
+            }
         }
     }
 }
